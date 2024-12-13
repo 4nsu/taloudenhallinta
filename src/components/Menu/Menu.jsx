@@ -1,12 +1,13 @@
 import styles from './Menu.module.scss'
+import { MdViewList, MdTimeline, MdSettings } from "react-icons/md"
 
 function Menu() {
 
     return (
         <div className={styles.menu}>
-            <div>list</div>
-            <div>stats</div>
-            <div>profile</div>
+            <div><MdViewList /></div>
+            <div><MdTimeline /></div>
+            <div><MdSettings /></div>
         </div>
     )
 
