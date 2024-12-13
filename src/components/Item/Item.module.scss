@@ -1,6 +1,8 @@
+@import '../../assets/styles/_config.scss';
+
 .item {
-    color: #696963;
-    border-bottom: 1px solid #C4C4C0;
+    color: $color-neutral-dark;
+    border-bottom: 1px solid $color-neutral-light;
 }
 
 .item_data {
@@ -17,6 +19,6 @@
 
 .item_type,
 .item_amount {
-    color: #000000;
+    color: $color-neutral-darkest;
     font-weight: bold;
 }
