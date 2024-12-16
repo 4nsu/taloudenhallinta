@@ -1,0 +1,19 @@
+@import '../../assets/styles/_config.scss';
+
+.content {
+    overflow-y: auto;
+    // Miksi ao. ominaisuus edes käytössä??
+    // scrollbar-color: $color-neutral-light $color-neutral-lighter;
+}
+
+.content::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+.content::-webkit-scrollbar-thumb {
+    background: $color-neutral-lighter;
+}
+
+.content::-webkit-scrollbar-track {
+    background: $color-neutral-lightest;
+}
