@@ -1,5 +1,5 @@
 import styles from './App.module.scss'
-import Button from '../../shared/buttons'
+import { FloatingButton } from '../../shared/buttons'
 import Content from '../Content'
 import Header from '../Header'
 import Item from '../Item'
@@ -16,7 +16,7 @@ function App() {
                     <Item />
                     <Item />
                     <Item />
-                    <Button>LISÄÄ UUSI RIVI</Button>
+                    <FloatingButton secondary>+</FloatingButton>
                 </Content>
                 <Menu />
             </div>
