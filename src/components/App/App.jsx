@@ -7,21 +7,21 @@ import Menu from '../Menu'
 
 function App() {
 
-  return (
-    <>
-      <div className={styles.app}>
-        <Header />
-        <Content>
-            <Item />
-            <Item />
-            <Item />
-            <Item />
-            <Button>LISÄÄ UUSI RIVI</Button>
-        </Content>
-        <Menu />
-      </div>
-    </>
-  )
+    return (
+        <>
+            <div className={styles.app}>
+                <Header />
+                <Content>
+                    <Item />
+                    <Item />
+                    <Item />
+                    <Item />
+                    <Button>LISÄÄ UUSI RIVI</Button>
+                </Content>
+                <Menu />
+            </div>
+        </>
+    )
 }
 
 export default App

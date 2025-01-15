@@ -20,3 +20,20 @@
 .button:hover {
     opacity: 1;
 }
+
+.button:disabled {
+    background-color: $color-neutral-light;
+    color: $color-neutral;
+    box-shadow: none;
+    opacity: 1;
+}
+
+.button_primary {
+    background-color: $color-primary;
+    color: $color-neutral-lightest;
+}
+
+.button_secondary {
+    background-color: $color-secondary;
+    color: $color-neutral-lightest;
+}
