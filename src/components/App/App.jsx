@@ -1,10 +1,11 @@
 import AppRouter from "../AppRouter"
+import testdata from "./testdata.js"
 
 function App() {
 
     return (
         <>
-            <AppRouter />
+            <AppRouter data={testdata} />
         </>
     )
 }
