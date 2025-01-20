@@ -1,3 +1,4 @@
+import AddItem from '../AddItem'
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import ErrorPage from "../ErrorPage"
 import Items from "../Items"
@@ -18,6 +19,7 @@ function AppRouter(props) {
                     element: <Items />,
                     loader: () => { return props.data }
                 },
+                { path: "add", element: <AddItem /> },
                 { path: "stats", element: <Stats /> },
                 { path: "settings", element: <Settings /> }
             ]
