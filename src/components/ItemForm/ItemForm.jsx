@@ -24,9 +24,14 @@ function ItemForm(props) {
         receiver: ""
     }
 
-    const {values, handleChange, handleSubmit } = useForm(submit, initialState, false)
+    const { values, handleChange, handleSubmit } = useForm(submit, initialState, false)
 
     const handleCancel = () => {
+        navigate(-1)
+    }
+
+    const handleDelete = () => {
+        props.onItemDelete(values.id)
         navigate(-1)
     }
 
@@ -77,17 +82,26 @@ function ItemForm(props) {
                         </div>
                         <div>
                             <Button primary
-                                    disabled={
-                                        values.type &&
+                                disabled={
+                                    values.type &&
                                         values.amount &&
                                         values.paymentDate &&
                                         values.receiver ? "" : "disabled"
-                                    }
-                                    type='submit'>
-                                { props.formData ? "TALLENNA" : "LISÄÄ" }
+                                }
+                                type='submit'>
+                                {props.formData ? "TALLENNA" : "LISÄÄ"}
                             </Button>
                         </div>
                     </div>
+                    {props.onItemDelete ?
+                        <div className={styles.itemform_row}>
+                            <div>
+                                <Button secondary onClick={handleDelete}>POISTA</Button>
+                            </div>
+                            <div></div>
+                        </div>
+                        : null
+                    }
                 </div>
             </form>
         </div>

@@ -23,7 +23,8 @@ function AppRouter(props) {
                 { path: "add", element: <AddItem onItemSubmit={props.onItemSubmit} /> },
                 {
                     path: "edit/:id",
-                    element: <EditItem onItemSubmit={props.onItemSubmit} />,
+                    element: <EditItem  onItemSubmit={props.onItemSubmit}
+                                        onItemDelete={props.onItemDelete} />,
                     loader: ({params}) => {
                         const item = props.data.filter(item => item.id === params.id).shift()
                         if (item) {
