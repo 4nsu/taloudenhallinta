@@ -40,7 +40,10 @@ function AppRouter(props) {
                     }
                 },
                 { path: "stats", element: <Stats /> },
-                { path: "settings", element: <Settings /> }
+                { 
+                    path: "settings", 
+                    element: <Settings typelist={props.typelist} /> 
+                }
             ]
         }
     ])
