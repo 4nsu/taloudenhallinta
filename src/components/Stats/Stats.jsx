@@ -1,5 +1,6 @@
 import styles from './Stats.module.scss'
 import { Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
+import { LabelList, Legend, Pie, PieChart } from 'recharts'
 import { useLoaderData } from 'react-router-dom'
 
 function Stats() {
@@ -32,6 +33,22 @@ function Stats() {
         })
     )
 
+    const reducer = (resultData, item) => {
+        // Löytyykö kulutyyppi taulukosta.
+        const index = resultData.findIndex(arrayItem => arrayItem.type === item.type)
+        if (index >= 0) {
+            // Kulutyyppi löytyy, kasvatetaan kokonaissummaa.
+            resultData[index].amount += item.amount
+        } else {
+            // Jos kulutyyppiä ei löydy, se lisätään
+            resultData.push({type: item.type, amount: item.amount})
+        }
+
+        return resultData
+    }
+
+    const piedata = rawData.reduce(reducer, [])
+
     return(
         <div className={styles.stats}>
             <h2>Tilastot</h2>
@@ -53,6 +70,21 @@ function Stats() {
                                 value => [numberFormat.format(value), "maksettu"]
                              } />
                 </LineChart>
+            </ResponsiveContainer>
+            <h3>Kulut kulutyypeittäin</h3>
+            <ResponsiveContainer height={350}>
+                <PieChart>
+                    <Pie data={piedata} dataKey='amount' nameKey='type'>
+                        <LabelList  dataKey='amount'
+                                    position='inside'
+                                    fill='#fff'
+                                    formatter={
+                                        value => numberFormat.format(value)
+                                    } />
+                    </Pie>
+                    <Legend />
+                    <Tooltip formatter={ value => numberFormat.format(value) } />
+                </PieChart>
             </ResponsiveContainer>
         </div>
     )
