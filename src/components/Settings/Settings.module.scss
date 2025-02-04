@@ -23,3 +23,17 @@
 .settings_types > div:nth-child(odd) {
     background-color: $color-neutral-lighter;
 }
+
+.settings_form {
+    display: flex;
+    margin-top: 0.5rem;
+}
+
+.settings_form input {
+    flex: 1 1 auto;
+    padding: 0.5rem;
+    border: 1px solid $color-neutral;
+    border-radius: 0.3rem;
+    font-size: 1em;
+    outline: none;
+}
