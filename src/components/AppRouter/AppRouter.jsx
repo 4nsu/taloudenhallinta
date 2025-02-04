@@ -39,7 +39,11 @@ function AppRouter(props) {
                         }
                     }
                 },
-                { path: "stats", element: <Stats /> },
+                { 
+                    path: "stats", 
+                    element: <Stats />,
+                    loader: () => { return props.data }
+                },
                 { 
                     path: "settings", 
                     element: <Settings typelist={props.typelist}
