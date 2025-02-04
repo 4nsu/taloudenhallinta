@@ -8,6 +8,8 @@ function Stats() {
     const numberFormat = new Intl.NumberFormat(locale, { style: 'currency', currency: 'EUR' })
     const rawData = useLoaderData()
 
+    // Yhdistetään mahdollisesti samalle päivälle osuvat maksut,
+    // jotta kaavion piirtyy yhdelle päivälle aina yksi datapiste.
     const groupedData = rawData.reduce(
         (result, item) => {
             const date = item.paymentDate
@@ -21,7 +23,8 @@ function Stats() {
             return result
         }, {}
     )
-    
+
+    // Muodostetaan linedata yhdistetyistä maksuista.
     const linedata = Object.values(groupedData).map(
         (item) => ({
             date: new Date(item.date).getTime(),
