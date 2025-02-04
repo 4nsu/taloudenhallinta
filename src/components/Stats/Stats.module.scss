@@ -1,0 +1,11 @@
+@import '../../assets/styles/_config.scss';
+
+.stats {
+    padding: $container-padding;
+}
+
+.stats h3 {
+    margin-top: 0.5rem;
+    margin-bottom: 0.2rem;
+    font-size: 1.2rem;
+}
