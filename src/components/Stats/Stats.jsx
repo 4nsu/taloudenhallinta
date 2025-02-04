@@ -1,6 +1,8 @@
 import styles from './Stats.module.scss'
+import { Cell } from 'recharts'
 import { Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
 import { LabelList, Legend, Pie, PieChart } from 'recharts'
+import randomColor from 'randomcolor'
 import { useLoaderData } from 'react-router-dom'
 
 function Stats() {
@@ -48,6 +50,9 @@ function Stats() {
     }
 
     const piedata = rawData.reduce(reducer, [])
+    const piecolors = randomColor({ count: piedata.length,
+                                    seed: 'siemenluku',
+                                    luminosity: 'dark' })
 
     return(
         <div className={styles.stats}>
@@ -75,6 +80,7 @@ function Stats() {
             <ResponsiveContainer height={350}>
                 <PieChart>
                     <Pie data={piedata} dataKey='amount' nameKey='type'>
+                        { piecolors.map( color => <Cell fill={color} key={color} /> ) }
                         <LabelList  dataKey='amount'
                                     position='inside'
                                     fill='#fff'
