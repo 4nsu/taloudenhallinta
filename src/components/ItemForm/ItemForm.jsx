@@ -42,7 +42,7 @@ function ItemForm(props) {
                     <div className={styles.itemform_row}>
                         <div>
                             <label htmlFor="type">Kulutyyppi</label>
-                            <select name="type" onChange={handleChange} value={values.type}>
+                            <select id="type" name="type" onChange={handleChange} value={values.type}>
                                 <option value="">(valitse)</option>
                                 { props.typelist.map(
                                     type => <option key={type}>{type}</option>
@@ -53,27 +53,27 @@ function ItemForm(props) {
                     <div className={styles.itemform_row}>
                         <div>
                             <label htmlFor="amount">Summa</label>
-                            <input type="number" name="amount" step="0.01" onChange={handleChange} value={values.amount} />
+                            <input id="amount" type="number" name="amount" step="0.01" onChange={handleChange} value={values.amount} />
                         </div>
                         <div>
                             <label htmlFor="paymentDate">Maksupäivä</label>
-                            <input type="date" name="paymentDate" onChange={handleChange} value={values.paymentDate} />
+                            <input id="paymentDate" type="date" name="paymentDate" onChange={handleChange} value={values.paymentDate} />
                         </div>
                     </div>
                     <div className={styles.itemform_row}>
                         <div>
                             <label htmlFor="periodStart">Laskutuskauden alku</label>
-                            <input type="date" name="periodStart" onChange={handleChange} value={values.periodStart} />
+                            <input id="periodStart" type="date" name="periodStart" onChange={handleChange} value={values.periodStart} />
                         </div>
                         <div>
                             <label htmlFor="periodEnd">Laskutuskauden loppu</label>
-                            <input type="date" name="periodEnd" onChange={handleChange} value={values.periodEnd} />
+                            <input id="periodEnd" type="date" name="periodEnd" onChange={handleChange} value={values.periodEnd} />
                         </div>
                     </div>
                     <div className={styles.itemform_row}>
                         <div>
                             <label htmlFor="receiver">Saaja</label>
-                            <input type="text" name="receiver" onChange={handleChange} value={values.receiver} />
+                            <input id="receiver" type="text" name="receiver" onChange={handleChange} value={values.receiver} />
                         </div>
                     </div>
                     <div className={styles.itemform_row}>
