@@ -1,5 +1,55 @@
 import { useState } from "react"
 
+/**
+ * @typedef  {Object} useFormObject
+ * @property {function} handleChange
+ *           Lomakekentän onChange-käsittelijä.
+ * @property {function} handleSubmit
+ *           Lomakkeen onSubmit-käsittelijä.
+ * @property {function} resetValues
+ *           Alustaa lomakkeen tiedot alkutilanteeseen.
+ * @property {function} setValues
+ *           Lomaketietojen päivitysfunktio, tätä ei normaalisti tarvita.
+ * @property {Object} values
+ *           Lomakkeen tiedot.
+ */
+
+/**
+ * React Hook, joka huolehtii lomakekenttien muutoksista ja 
+ * lomaketietojen lähetyksestä.
+ * 
+ * @example
+ * import useForm from './useform.js'
+ *
+ * // Määritellään lomakkeen lähetyksen käsittelijä.
+ * const submit = () => {
+ *   console.log(values)
+ * }
+ *
+ * // Määritellään lomakkeen alkutilanne.
+ * const initial = { word: 'sana' }
+ *
+ * // Alustetaan useForm-käsittelijä.
+ * const {values, handleChange, handleSubmit } = useForm(submit, initial, false)
+ *
+ * // Renderöidään lomake, joka käyttää useForm-hooksia.
+ * return (
+ *   <form onSubmit={handleSubmit}>
+ *     <input type='input' name='word' value={values.word} onChange={handleChange} />
+ *     <button type='submit'>LÄHETÄ</button>
+ *   </form>
+ * )
+ * 
+ * @param   {function} callback
+ *          Lomakekäsittelijä, jota kutsutaan kun lomakkeen tiedot lähetetään.
+ * @param   {Object} [initialState = {} ]
+ *          Lomakekenttien alkuarvot.
+ * @param   {boolean} [resetOnSubmit = true]
+ *          Alustetaanko lomake alkutilanteeseen tietojen lähetyksen yhteydessä.
+ * @returns {useFormObject}
+ *          Lomakekäsittelijän funktiot ja lomakkeen tiedot.
+ */
+
 const useForm = ( callback, initialState={}, resetOnSubmit=true ) => {
 
     // Esitellään useState-hooks,
