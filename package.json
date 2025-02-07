@@ -45,6 +45,8 @@
     "sass": "^1.66.1",
     "storybook": "^8.5.3",
     "vite": "^4.4.5",
-    "vitest": "^0.34.6"
+    "vite-plugin-pwa": "^0.16.7",
+    "vitest": "^0.34.6",
+    "workbox-window": "^7.0.0"
   }
 }
