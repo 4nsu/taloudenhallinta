@@ -21,6 +21,10 @@ Testauksessa:
 - Vitest (jest)
 - React Testing Library
 
+Dokumentoinnissa:
+- JSDocs
+- Storybook
+
 ## Asennus ja käyttö
 
 Projektin käyttö edellyttää, että `node`- ja `npm`-sovellukset on asennettu.
@@ -30,6 +34,10 @@ Projektin käyttö edellyttää, että `node`- ja `npm`-sovellukset on asennettu
 3. Käynnistä testausympäristö komennolla `npm run test`.
 4. Käynnistä kehitysympäristö komennolla `npm run dev`. 
 5. Testaa sovellusta osoitteessa [http://localhost:5173](http://localhost:5173).
+6. JSDocs dokumentaation löydät pääkansion alla olevasta docs-kansiosta.
+7. Storybook dokumentaatiota ei ole julkaistu, mutta siihen voit tutustua:
+   - Käynnistämällä storybookympäristön komennolla `npm run storybook`
+   - Jonka jälkeen Storybook avautuu osoitteessa [http://localhost:6006/](http://localhost:6006/)
 
 ## Projektin tila
 
